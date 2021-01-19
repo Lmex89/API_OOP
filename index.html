@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <div class="container mt-6 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/questions" onsubmit="event.preventDefault(), getQuestions()">
+                            <div class="form-group">
+                                <label for="total-questions">Cantidad de preguntas</label>
+                                <select class="form-control" id="total-questions">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-category">Categoría</label>
+                                <select class="form-control" id="select-category">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-dificulty">Dificultad</label>
+                                <select class="form-control" id="select-Dificulty">
+                                    <option value = "easy"> Easy</option>
+                                    <option value = "medium">Medium</option>
+                                    <option value = "hard">Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-type">Tipo (True/False --Opción Multiple)</label>
+                                <select class="form-control" id="select-type">
+                                    <option value = "multiple">Opción Multiple</option>
+                                    <option value = "boolean">Verdadero/Falso</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Obtener preguntas</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container md-6 bg-light">
+                <div class="row justify-content-center">
+
+                    <form>
+                        <div class="form-Answer">
+                            <div class="row" id="questions-container" onsubmit="event.preventDefault(),printData()">
+                                <!-- Aquí va el contenido -->
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-primary " id="score" style="display:none" onclick="event.preventDefault()">Obtener Score</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="md-6 mt-3 bg-light" id="results-box">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+<script src="./api.js "></script>
+
+</html>
