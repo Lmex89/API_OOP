@@ -1,22 +1,26 @@
 import Request from './classes/Request.js';
 import UI from './classes/UI.js';
 
-function getScorebtn(e) {
-    e.preventDefault();
+function getScorebtn() {
     const totalQuestions = document.getElementById('total-questions').value;
     console.log(totalQuestions);
-    const container = document.querySelectorAll('.form-question');
+    const container = document.querySelectorAll('input');
     console.log(container);
     const resultbox = document.getElementById('results-box');
     let score = 0;
-    select_answers = {
+
+    let select_answers = {
         true: 1,
-        false: -1,
+        false: 0,
     };
 
     container.forEach(elemnt => {
-        score += select_answers[elemnt.value];
+        if (elemnt.checked && elemnt.value == 'true') {
+            console.log(elemnt);
+            score += 1;
+        }
     });
+    console.log(score);
     let TotalScore = score / totalQuestions * 100;
     let DivNoQuestions = document.createElement('div');
     DivNoQuestions.innerHTML =
@@ -49,3 +53,9 @@ form.addEventListener('submit', event => {
 Request.getCategories()
     .then(response => response.json())
     .then(data => UI.printCategories(data.trivia_categories));
+
+const form2 = document.querySelector('#form-q2');
+form2.addEventListener('submit', event => {
+    event.preventDefault();
+    getScorebtn();
+});

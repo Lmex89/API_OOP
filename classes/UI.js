@@ -50,14 +50,13 @@ export default class UI {
                 1: element.incorrect_answers[0],
             };
             contador += 1;
-
             container.innerHTML += `
                                     <div class="col-md-6 mt-3">
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 ${element.question}
                                             </div>
-                                            <div class="card-body" id ="question-box">
+                                            <div class="card-body" id = "question-box">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}+1" value  = "${answers[index_t[0]] === answers[0]}" required>
                                                     <label class="form-check-label" for="${contador}+1">
@@ -65,7 +64,7 @@ export default class UI {
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}" value ="${answers[index_t[1]] === answers[0]}" required >
+                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}" value ="${answers[index_t[1]] === answers[0]}"  required >
                                                     <label class="form-check-label" for="${contador}">
                                                          ${answers[index_t[1]]}
                                                     </label>
@@ -102,29 +101,30 @@ export default class UI {
                                         <div class="card-body">
                                             ${element.question}
                                         </div>
-                                        <div class="card-body" id ="quesiton-box">
+                                        <div class="card-body" id ="question-box">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}" required>
+                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}"
+                                                 id="${contador}" value = '${answers[index_t[0]] === answers[0]}'required>
                                                 <label class="form-check-label" for="${contador}">
                                                     ${answers[index_t[0]]}
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}+10" requered>
+                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}+10" value = "${answers[index_t[1]] === answers[0]}"required>
                                                 <label class="form-check-label" for="${contador}+10">
                                                     ${answers[index_t[1]]}
                                                 </label>
                                             </div>
 
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}+20" required >
+                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="${contador}+20" value = '${answers[index_t[2]] === answers[0]}'required >
                                                 <label class="form-check-label" for="${contador}+20">
                                                      ${answers[index_t[2]]}
                                                 </label>
                                             </div>
 
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="$contador}+30" required>
+                                                <input class="form-check-input" type="radio" name="${answers[index_t[0]] + contador}" id="$contador}+30" value = '${answers[index_t[3]] === answers[0]}'required>
                                                 <label class="form-check-label" for="${contador}+30">
                                                      ${answers[index_t[3]]}
                                                 </label>
