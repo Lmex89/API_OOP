@@ -16,7 +16,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/questions" onsubmit="event.preventDefault(), getQuestions()">
+                        <form action="/questions" id="form-questions">
                             <div class="form-group">
                                 <label for="total-questions">Cantidad de preguntas</label>
                                 <select class="form-control" id="total-questions">
@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="select-dificulty">Dificultad</label>
-                                <select class="form-control" id="select-Dificulty">
+                                <select class="form-control" id="select-dificulty">
                                     <option value = "easy"> Easy</option>
                                     <option value = "medium">Medium</option>
                                     <option value = "hard">Hard</option>
@@ -59,11 +59,11 @@
 
                     <form>
                         <div class="form-Answer">
-                            <div class="row" id="questions-container" onsubmit="event.preventDefault(),printData()">
+                            <div class="row" id="questions-container">
                                 <!-- Aquí va el contenido -->
                             </div>
                             <div class="mt-3">
-                                <button class="btn btn-primary " id="score" style="display:none" onclick="event.preventDefault()">Obtener Score</button>
+                                <button class="btn btn-primary " id="score" style="display:none" onsubmit="getScorebtn(e)">Obtener Score</button>
                             </div>
 
                         </div>
@@ -83,6 +83,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
-<script src="./api.js "></script>
+<script type="module" src="./main.js"></script>
 
 </html>
